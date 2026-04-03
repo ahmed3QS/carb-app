@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, Suspense } from "react"
 import { Search, ArrowRight, Heart, Clock, ChevronDown, ChevronUp } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent } from "@/components/ui/card"
@@ -37,7 +37,7 @@ const TARGET_ORDER = [
   "السوبر ماركت"
 ]
 
-export default function AddMealPage() {
+function AddMealContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const mealTypeFromQuery = searchParams.get("type") || searchParams.get("meal") || "سناك"
@@ -152,6 +152,14 @@ export default function AddMealPage() {
         )}
       </div>
     </div>
+  )
+}
+
+export default function AddMealPage() {
+  return (
+    <Suspense fallback={<div className="p-8 text-center text-muted-foreground animate-pulse font-bold">جاري تحميل البيانات...</div>}>
+      <AddMealContent />
+    </Suspense>
   )
 }
 
