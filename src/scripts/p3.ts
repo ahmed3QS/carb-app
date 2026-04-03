@@ -1,0 +1,45 @@
+export const PART_3 = [
+  // SECTION 5
+  { id: "s5_1", name_ar: "حليب ندى طازج", category: "ألبان ومشروبات", carbs_per_100g: 0, is_weighable: false, unit_options: [{name: "100 مل", carbs: 5}, {name: "كوب 200 مل", carbs: 10}] },
+  { id: "s5_2", name_ar: "حليب المراعي طازج", category: "ألبان ومشروبات", carbs_per_100g: 0, is_weighable: false, unit_options: [{name: "100 مل", carbs: 5}, {name: "كوب 200 مل", carbs: 10}] },
+  { id: "s5_3", name_ar: "حليب المراعي قليل الدسم", category: "ألبان ومشروبات", carbs_per_100g: 0, is_weighable: false, unit_options: [{name: "100 مل", carbs: 5}, {name: "كوب 200 مل", carbs: 10}] },
+  { id: "s5_4", name_ar: "حليب نادك طازج", category: "ألبان ومشروبات", carbs_per_100g: 0, is_weighable: false, unit_options: [{name: "100 مل", carbs: 5}, {name: "كوب 200 مل", carbs: 10}] },
+  { id: "s5_5", name_ar: "لبن ندى طازج", category: "ألبان ومشروبات", carbs_per_100g: 0, is_weighable: false, unit_options: [{name: "100 مل", carbs: 5}, {name: "كوب 200 مل", carbs: 10}] },
+  { id: "s5_6", name_ar: "لبن المراعي طازج", category: "ألبان ومشروبات", carbs_per_100g: 0, is_weighable: false, unit_options: [{name: "100 مل", carbs: 5}, {name: "كوب 200 مل", carbs: 10}] },
+  { id: "s5_7", name_ar: "لبن كامل الدسم نادك", category: "ألبان ومشروبات", carbs_per_100g: 0, is_weighable: false, unit_options: [{name: "100 مل", carbs: 5}, {name: "كوب 200 مل", carbs: 10}] },
+  { id: "s5_8", name_ar: "زبادي المراعي كامل الدسم", category: "ألبان ومشروبات", carbs_per_100g: 0, is_weighable: false, unit_options: [{name: "علبة صغيرة", carbs: 10}] },
+  { id: "s5_9", name_ar: "زبادي المراعي قليل الدسم", category: "ألبان ومشروبات", carbs_per_100g: 0, is_weighable: false, unit_options: [{name: "علبة صغيرة", carbs: 11}] },
+  { id: "s5_10", name_ar: "عصير برتقال طازج", category: "ألبان ومشروبات", carbs_per_100g: 0, is_weighable: false, unit_options: [{name: "100 مل", carbs: 11}, {name: "كوب 200 مل", carbs: 22}] },
+  { id: "s5_11", name_ar: "عصير تفاح المراعي", category: "ألبان ومشروبات", carbs_per_100g: 0, is_weighable: false, unit_options: [{name: "100 مل", carbs: 11}, {name: "كوب 200 مل", carbs: 22}] },
+  { id: "s5_12", name_ar: "عصير برتقال نادك", category: "ألبان ومشروبات", carbs_per_100g: 0, is_weighable: false, unit_options: [{name: "100 مل", carbs: 11}, {name: "كوب 200 مل", carbs: 22}] },
+  { id: "s5_13", name_ar: "مشروب غازي بيبسي", category: "ألبان ومشروبات", carbs_per_100g: 0, is_weighable: false, unit_options: [{name: "100 مل", carbs: 11}, {name: "علبة 330 مل", carbs: 36}] },
+  { id: "s5_14", name_ar: "كوكا كولا", category: "ألبان ومشروبات", carbs_per_100g: 0, is_weighable: false, unit_options: [{name: "100 مل", carbs: 11}, {name: "علبة 330 مل", carbs: 36}] },
+  { id: "s5_15", name_ar: "سفن أب", category: "ألبان ومشروبات", carbs_per_100g: 0, is_weighable: false, unit_options: [{name: "100 مل", carbs: 11}, {name: "علبة 330 مل", carbs: 36}] },
+  { id: "s5_16", name_ar: "ميراندا برتقال", category: "ألبان ومشروبات", carbs_per_100g: 0, is_weighable: false, unit_options: [{name: "100 مل", carbs: 12}, {name: "علبة 330 مل", carbs: 40}] },
+  { id: "s5_17", name_ar: "عصير مانجو المراعي", category: "ألبان ومشروبات", carbs_per_100g: 0, is_weighable: false, unit_options: [{name: "100 مل", carbs: 13}, {name: "كوب 200 مل", carbs: 26}] },
+  { id: "s5_18", name_ar: "قهوة عربية", category: "ألبان ومشروبات", carbs_per_100g: 0, is_weighable: false, unit_options: [{name: "فنجان", carbs: 0}] },
+  { id: "s5_19", name_ar: "شاي بدون سكر", category: "ألبان ومشروبات", carbs_per_100g: 0, is_weighable: false, unit_options: [{name: "كوب", carbs: 0}] },
+
+  // SECTION 6
+  { id: "s6_1", name_ar: "شوكولاتة جلاكسي سادة", category: "حلويات", carbs_per_100g: 0, is_weighable: false, unit_options: [{name: "حبة صغيرة", carbs: 25}] },
+  { id: "s6_2", name_ar: "شوكولاتة سنكرز", category: "حلويات", carbs_per_100g: 0, is_weighable: false, unit_options: [{name: "حبة", carbs: 30}] },
+  { id: "s6_3", name_ar: "شوكولاتة باونتي", category: "حلويات", carbs_per_100g: 0, is_weighable: false, unit_options: [{name: "حبة", carbs: 33}] },
+  { id: "s6_4", name_ar: "شوكولاتة تويكس", category: "حلويات", carbs_per_100g: 0, is_weighable: false, unit_options: [{name: "حبة", carbs: 32}] },
+  { id: "s6_5", name_ar: "بسكويت دايجستف", category: "حلويات", carbs_per_100g: 0, is_weighable: false, unit_options: [{name: "حبة", carbs: 10}] },
+  { id: "s6_6", name_ar: "بسكويت أوريو", category: "حلويات", carbs_per_100g: 0, is_weighable: false, unit_options: [{name: "حبة", carbs: 7}, {name: "باكيت 3 حبات", carbs: 21}] },
+  { id: "s6_7", name_ar: "أيس كريم فانيلا المراعي", category: "حلويات", carbs_per_100g: 0, is_weighable: false, unit_options: [{name: "كوب صغير", carbs: 15}] },
+  { id: "s6_8", name_ar: "أيس كريم شوكولاتة", category: "حلويات", carbs_per_100g: 0, is_weighable: false, unit_options: [{name: "كوب صغير", carbs: 17}] },
+  { id: "s6_9", name_ar: "كيك العائلة", category: "حلويات", carbs_per_100g: 0, is_weighable: false, unit_options: [{name: "قطعة", carbs: 30}] },
+  { id: "s6_10", name_ar: "حلاوة طحينية", category: "حلويات", carbs_per_100g: 0, is_weighable: false, unit_options: [{name: "ملعقة", carbs: 10}] },
+  
+  // SECTION 9
+  { id: "s9_1", name_ar: "شيبس ليز ملح", category: "سناكات", carbs_per_100g: 0, is_weighable: false, unit_options: [{name: "كيس صغير", carbs: 15}, {name: "كيس كبير", carbs: 50}] },
+  { id: "s9_2", name_ar: "شيبس ليز جبن", category: "سناكات", carbs_per_100g: 0, is_weighable: false, unit_options: [{name: "كيس صغير", carbs: 15}, {name: "كيس كبير", carbs: 50}] },
+  { id: "s9_3", name_ar: "دوريتوس ناتشو", category: "سناكات", carbs_per_100g: 0, is_weighable: false, unit_options: [{name: "كيس صغير", carbs: 17}, {name: "كيس كبير", carbs: 55}] },
+  { id: "s9_4", name_ar: "شيتوس حار نار", category: "سناكات", carbs_per_100g: 0, is_weighable: false, unit_options: [{name: "كيس صغير", carbs: 16}, {name: "كيس كبير", carbs: 52}] },
+  { id: "s9_5", name_ar: "ب فشار مقرمش", category: "سناكات", carbs_per_100g: 0, is_weighable: false, unit_options: [{name: "كوب", carbs: 15}] },
+  { id: "s9_6", name_ar: "مكسرات مشكلة مشوية", category: "سناكات", carbs_per_100g: 21, avg: 21, is_weighable: true, unit_options: [{name: "حفنة", carbs: 7}] },
+  { id: "s9_7", name_ar: "فول سوداني", category: "سناكات", carbs_per_100g: 16, avg: 16, is_weighable: true, unit_options: [{name: "حفنة", carbs: 5}] },
+  { id: "s9_8", name_ar: "لوز مشوي", category: "سناكات", carbs_per_100g: 22, avg: 22, is_weighable: true, unit_options: [{name: "حفنة", carbs: 7}] },
+  { id: "s9_9", name_ar: "فستق مشوي", category: "سناكات", carbs_per_100g: 28, avg: 28, is_weighable: true, unit_options: [{name: "حفنة", carbs: 9}] }
+]
