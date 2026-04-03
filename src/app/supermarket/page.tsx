@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 
+import { BackButton } from "@/components/ui/back-button"
 import { SUPERMARKET_PRODUCTS } from "@/scripts/seed_foods"
 
 export default function SupermarketPage() {
@@ -15,6 +16,7 @@ export default function SupermarketPage() {
     <div className="container max-w-lg mx-auto p-4 pt-6 space-y-6">
       <header className="flex flex-col gap-2 mb-6">
         <h1 className="text-2xl font-bold flex items-center gap-2">
+          <BackButton />
           <div className="bg-primary/10 p-2 rounded-xl">
             <ShoppingCart className="w-6 h-6 text-primary" />
           </div>

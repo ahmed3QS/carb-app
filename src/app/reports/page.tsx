@@ -2,12 +2,14 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { BarChart2, Activity, TrendingDown, Crown } from "lucide-react"
+import { BackButton } from "@/components/ui/back-button"
 
 export default function ReportsPage() {
   return (
     <div className="container max-w-lg mx-auto p-4 pt-6 space-y-6 pb-24">
       <header className="flex flex-col gap-2 mb-6">
         <h1 className="text-2xl font-bold flex items-center gap-2">
+          <BackButton />
           <div className="bg-primary/10 p-2 rounded-xl">
             <BarChart2 className="w-6 h-6 text-primary" />
           </div>

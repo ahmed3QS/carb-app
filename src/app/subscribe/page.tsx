@@ -3,16 +3,20 @@
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { CheckCircle2, Star, ShieldCheck, XCircle } from "lucide-react"
+import { BackButton } from "@/components/ui/back-button"
 
 export default function SubscribePage() {
   return (
     <div className="container max-w-lg mx-auto p-4 pt-6 space-y-6 pb-24">
-      <header className="text-center space-y-2 mb-6">
-        <div className="inline-flex bg-primary/10 p-3 rounded-full mb-2">
-          <Star className="w-8 h-8 text-warning fill-warning" />
+      <header className="space-y-4 mb-6">
+        <BackButton />
+        <div className="text-center space-y-2">
+          <div className="inline-flex bg-primary/10 p-3 rounded-full mb-2">
+            <Star className="w-8 h-8 text-warning fill-warning" />
+          </div>
+          <h1 className="text-3xl font-bold tracking-tight">اشتراك شهري</h1>
+          <p className="text-muted-foreground font-medium px-4">افتح كل المميزات المتقدمة وتعرّف على تفاصيل نظامك بدقة.</p>
         </div>
-        <h1 className="text-3xl font-bold tracking-tight">اشتراك شهري</h1>
-        <p className="text-muted-foreground font-medium px-4">افتح كل المميزات المتقدمة وتعرّف على تفاصيل نظامك بدقة.</p>
       </header>
 
       <Card className="border-2 border-primary shadow-xl shadow-primary/10 relative overflow-hidden bg-gradient-to-br from-card to-primary/5">

@@ -11,22 +11,28 @@ import Link from "next/link"
 
 export default function Dashboard() {
   const router = useRouter()
-  const { currentUserUid, profile, logs } = useStore()
+  const { currentUserUid, profile, logs, isAuthLoaded } = useStore()
   
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
     setMounted(true)
-    if (!currentUserUid) {
+  }, [])
+
+  useEffect(() => {
+    if (isAuthLoaded && !currentUserUid) {
       router.push("/login")
     }
-  }, [currentUserUid, router])
+  }, [currentUserUid, isAuthLoaded, router])
 
-  if (!mounted || !currentUserUid) return null
+  if (!mounted || !isAuthLoaded || !currentUserUid) return null
   
   if (!profile) return null
 
-  const currentCarbs = logs.reduce((sum: number, item: any) => sum + item.carbs, 0)
+  const today = new Date().toLocaleDateString('en-US')
+  const todayLogs = logs.filter((log: any) => new Date(log.timestamp).toLocaleDateString('en-US') === today)
+
+  const currentCarbs = todayLogs.reduce((sum: number, item: any) => sum + item.carbs, 0)
   const goal = profile.dailyGoal
   const percentage = Math.min((currentCarbs / goal) * 100, 100)
   
@@ -47,7 +53,7 @@ export default function Dashboard() {
     statusTextColor = "text-warning"
   }
 
-  if (logs.length === 0) {
+  if (todayLogs.length === 0) {
     return (
       <div className="container max-w-lg mx-auto p-4 pt-12 space-y-6 flex flex-col items-center justify-center min-h-[70vh] text-center animate-in fade-in slide-in-from-bottom-4">
         <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mb-6 shadow-inner border border-primary/20">
@@ -110,7 +116,7 @@ export default function Dashboard() {
         
         <div className="grid grid-cols-2 gap-3">
           {["فطور", "غداء", "عشاء", "سناك"].map(type => {
-            const mealLogs = logs.filter((l: any) => l.mealType === type)
+            const mealLogs = todayLogs.filter((l: any) => l.mealType === type)
             if (mealLogs.length === 0) {
               return <MealSummaryCard key={type} title={type} carbs={0} time="--" isEmpty />
             }

@@ -7,9 +7,9 @@ import { Card, CardContent } from "@/components/ui/card"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
+import { BackButton } from "@/components/ui/back-button"
 
 export default function AddCustomProduct() {
-  const router = useRouter()
   const [name, setName] = useState("")
   const [carbs, setCarbs] = useState("")
   const [type, setType] = useState<"100g" | "serving">("100g")
@@ -18,9 +18,7 @@ export default function AddCustomProduct() {
   return (
     <div className="container max-w-lg mx-auto p-4 pt-6 space-y-6">
       <header className="flex items-center gap-3 mb-6">
-        <button onClick={() => router.back()} className="p-2 rounded-full hover:bg-muted transition-colors">
-          <ArrowRight className="w-5 h-5" />
-        </button>
+        <BackButton />
         <h1 className="text-xl font-bold flex items-center gap-2">
           إضافة منتج خاص
           <PackagePlus className="w-5 h-5 text-primary" />

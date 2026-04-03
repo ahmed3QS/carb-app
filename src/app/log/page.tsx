@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { ChevronRight, ChevronLeft, Calendar as CalendarIcon, Edit2, Trash2 } from "lucide-react"
 import { useRouter } from "next/navigation"
 import { useStore } from "@/lib/store"
@@ -8,28 +8,41 @@ import { Card, CardContent } from "@/components/ui/card"
 import { doc, deleteDoc } from "firebase/firestore"
 import { db } from "@/lib/firebase"
 
+import { BackButton } from "@/components/ui/back-button"
+
 export default function DailyLogPage() {
   const router = useRouter()
-  const { currentUserUid, logs } = useStore()
+  const { currentUserUid, logs, isAuthLoaded } = useStore()
   const [mounted, setMounted] = useState(false)
 
-  useState(() => {
+  useEffect(() => {
     setMounted(true)
-  })
+  }, [])
+
+  useEffect(() => {
+    if (isAuthLoaded && !currentUserUid) {
+      router.push("/login")
+    }
+  }, [isAuthLoaded, currentUserUid, router])
 
   // Prevent hydration errors
-  if (!mounted) return null
-  if (!currentUserUid) {
-    if (typeof window !== 'undefined') router.push("/login")
-    return null
-  }
+  if (!mounted || !isAuthLoaded || !currentUserUid) return null
 
-  const totalCarbs = logs.reduce((sum, item) => sum + item.carbs, 0)
+  // Filter logs for today only
+  const today = new Date().toLocaleDateString('en-US');
+  const todayLogs = logs.filter(log => {
+    return new Date(log.timestamp).toLocaleDateString('en-US') === today;
+  });
+
+  const totalCarbs = todayLogs.reduce((sum, item) => sum + item.carbs, 0)
 
   return (
     <div className="container max-w-lg mx-auto p-4 pt-6 space-y-6">
       <header className="flex justify-between items-center mb-2">
-        <h1 className="text-2xl font-bold">السجل اليومي</h1>
+        <div className="flex items-center gap-2">
+          <BackButton />
+          <h1 className="text-2xl font-bold">السجل اليومي</h1>
+        </div>
         <div className="flex items-center gap-1 bg-muted rounded-xl p-1 shadow-inner">
           <button className="p-2 hover:bg-background rounded-lg transition-colors"><ChevronRight className="w-5 h-5" /></button>
           <div className="flex items-center gap-1.5 px-2 text-sm font-bold">
@@ -48,7 +61,7 @@ export default function DailyLogPage() {
 
       <div className="space-y-6">
         {["فطور", "غداء", "عشاء", "سناك"].map(mealType => {
-          const mealLogs = logs.filter(l => l.mealType === mealType)
+          const mealLogs = todayLogs.filter(l => l.mealType === mealType)
           if (mealLogs.length === 0) return null
           
           return (
