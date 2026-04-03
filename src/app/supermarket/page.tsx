@@ -48,8 +48,8 @@ export default function SupermarketPage() {
                   </span>
                 </div>
                 <div className="text-center bg-primary/5 border border-primary/10 px-3 py-1.5 rounded-xl shadow-inner min-w-[70px]">
-                  <span className="block text-[10px] font-bold text-muted-foreground mb-0.5">العبوة كاملة</span>
-                  <span className="font-extrabold text-2xl text-primary">{product.carbs_per_pack}</span>
+                  <span className="block text-[10px] font-bold text-muted-foreground mb-0.5">{product.piece_options?.[0]?.name || 'حصة'}</span>
+                  <span className="font-extrabold text-2xl text-primary">{product.piece_options?.[0]?.carbs || 0}</span>
                   <span className="text-xs text-muted-foreground font-medium mr-1">جم</span>
                 </div>
               </div>
