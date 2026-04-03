@@ -301,7 +301,7 @@ function FoodItemCard({ food, mealType }: { food: any; mealType: string }) {
                 await addDoc(collection(db, "users", currentUserUid, "logs"), {
                   name: food.name_ar,
                   carbs: finalCarbs,
-                  mealType: mealTypeFromQuery,
+                  mealType: mealType,
                   unit: mode === "weight" ? `${grams} جم` : selectedUnit?.name || "حصة",
                   time: dt.toLocaleTimeString("ar-SA", { hour: '2-digit', minute: '2-digit' }),
                   timestamp: dt.toISOString()
